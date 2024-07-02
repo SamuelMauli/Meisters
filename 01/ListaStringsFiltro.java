@@ -1,6 +1,6 @@
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -13,11 +13,12 @@ public class ListaStringsFiltro {
 
             List<String> palavrasFiltradas = palavras.stream()
                     .filter(palavra -> palavra.startsWith("a") && palavra.length() == 3)
+                    .sorted() // Coloca em ordem alfabética
                     .collect(Collectors.toList());
 
             int numeroPalavras = palavrasFiltradas.size();
 
-            System.out.println("Existem " + numeroPalavras + " palavras que começam com 'a' e possuem 3 letras: " + palavrasFiltradas);
+            System.out.println("Existem " + numeroPalavras + " palavras que começam com 'a' e possuem 3 letras, em ordem alfabética: " + palavrasFiltradas);
         } catch (IOException e) {
             System.out.println("Erro ao ler o arquivo: " + e.getMessage());
         }
