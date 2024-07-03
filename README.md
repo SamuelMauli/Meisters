@@ -30,4 +30,6 @@ Os codigos estão organizados em 2 pastas, Exercicíos-1-4 contendo os exercicí
    b. Consulta SQL para inserir um novo cliente na tabela de clientes com os detalhes: first_name = Pilar, last_name = Rosa, email = pilar_rosa@email.com.
 
 5. Exercício em desenvolvimento:
-   O exercício 5 está sendo desenvolvido.
+   No exercício 5, não foi possível desenvolver a integração entre o front-end e o back-end, nem implementar o banco de dados MySQL conforme solicitado. No entanto, realizei a criação de uma página que permite criar, editar e remover tarefas. Essa página é uma representação clara das funcionalidades que devem ser implementadas no back-end.
+
+   O back-end já possui as funcionalidades necessárias. Infelizmente, ainda não tenho o conhecimento técnico para realizar o projeto completo conforme o desafio, mas vejo isso como uma oportunidade de crescimento. Estou empenhado em aprender e, com dedicação, conseguirei desenvolver completamente o projeto To-Do, incluindo a integração com banco de dados e a comunicação entre front-end e back-end.

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+    <div id="p1" class="mdl-progress mdl-js-progress"></div>
+    <script>
+        document.querySelector('#p1').addEventListener('mdl-componentupgraded', function() {
+            this.MaterialProgress.setProgress(44);
+        });
+    </script>
+</head>
+<body>
+
+    <div class="kanban__title">
+        <h1><i class="material-icons"></i> Lista de Tarefas</h1>
+    </div>
+    <div class="dd">
+        <ol class="kanban To-do">
+            <div class="kanban__title">
+                <h2><i class="material-icons"></i> A Fazer</h2>
+            </div>
+            <li class="dd-item" data-id="1">
+                <div class="task-header">
+                    <h3 class="title dd-handle">Lavar a louça<i class="material-icons"></i></h3>
+                    <p class="task-date">Criado em: 03/07/2024</p>
+                </div>
+                <div class="text" contenteditable="true">Descrição da tarefa</div>
+                <div class="task-info">
+                    <div class="actions">
+                        <label for="file-input-1">
+                            <i class="material-icons">attach_file</i>
+                        </label>
+                        <input id="file-input-1" type="file" style="display: none;">
+                    </div>
+                </div>
+            </li>
+            <li class="dd-item" data-id="2">
+                <div class="task-header">
+                    <h3 class="title dd-handle">Fazer compras<i class="material-icons"></i></h3>
+                    <p class="task-date">Criado em: 03/07/2024</p>
+                </div>
+                <div class="text" contenteditable="true">Descrição da tarefa</div>
+                <div class="task-info">
+                    <div class="actions">
+                        <label for="file-input-2">
+                            <i class="material-icons">attach_file</i>
+                        </label>
+                        <input id="file-input-2" type="file" style="display: none;">
+                    </div>
+                </div>
+            </li>
+        </ol>    
+    
+        <ol class="kanban progress">
+            <div class="kanban__title">
+                <h2><i class="material-icons"></i> Em Progresso</h2>
+            </div>
+            <li class="dd-item" data-id="3">
+                <h3 class="title dd-handle">Corrigir bug no login<i class="material-icons"></i></h3>
+                <p class="task-date">Criado em: 20/06/2024</p>
+                <div class="text" contenteditable="true">Descrição da tarefa</div>
+                <i class="material-icons" id="label blue"></i>
+                <div class="actions">
+                    <label for="file-input-3">
+                        <i class="material-icons">attach_file</i>
+                    </label>
+                    <input id="file-input-3" type="file" style="display: none;">
+                </div>
+            </li>
+        </ol>
+    
+        <ol class="kanban Done">
+            <div class="kanban__title">
+                <h2><i class="material-icons"></i> Concluídas</h2>
+            </div>
+            <li class="dd-item" data-id="4">
+                <h3 class="title dd-handle">Implementar design UX<i class="material-icons"></i></h3>
+                <p class="task-date">Criado em: 20/05/2024</p>
+                <div class="text" contenteditable="true">Descrição da tarefa</div>
+                <i class="material-icons" id="label blue"></i>
+                <div class="actions">
+                    <label for="file-input-4">
+                        <i class="material-icons">attach_file</i>
+                    </label>
+                    <input id="file-input-4" type="file" style="display: none;">
+                </div>
+            </li>
+        </ol>
+    
+        <ol class="kanban Gone">
+            <div class="kanban__title">
+                <h2><i class="material-icons"></i> Removidas</h2>
+            </div>
+            <li class="dd-item" data-id="5">
+                <h3 class="title dd-handle">Remover tarefa antiga<i class="material-icons"></i></h3>
+                <p class="task-date">Criado em: 03/07/2024</p>
+                <div class="text" contenteditable="true">Descrição da tarefa</div>
+                <i class="material-icons" id="label blue"></i>
+                <div class="actions">
+                    <label for="file-input-5">
+                        <i class="material-icons">attach_file</i>
+                    </label>
+                    <input id="file-input-5" type="file" style="display: none;">
+                </div>
+            </li>
+        </ol>
+    </div>
+    
+    <menu class="kanban">
+        <button id="add-task"><i class="material-icons">Adicionar Tarefa</i></button>
+        <button id="delete-task"><i class="material-icons">Apagar Tarefa</i></button>
+        <button id="edit-task"><i class="material-icons">Editar Tarefa</i></button>
+    </menu>
+    
+    <div class="popup-background" style="display:none;">
+        <div class="popup-container">
+            <div class="popup-button">
+                <button class="close-button">Fechar</button>
+                <button class="save-button">Salvar</button>
+            </div>
+            <ol class="kanban New">
+                <h2><i class="material-icons"></i> Nova Tarefa</h2>
+                <li class="dd-item" data-id="new">
+                    <h3 class="title dd-handle" contenteditable="true">Título</h3>
+                    <div class="text" contenteditable="true">Descrição da tarefa</div>
+                    <div class="actions">
+                        <label for="file-input-new">
+                            <i class="material-icons">attach_file</i>
+                        </label>
+                        <input id="file-input-new" type="file" style="display: none;">
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <button id="notification">Receba as notificações por email</button>
+
+    <div class="popup-background-email" style="display:none;">
+            <ol class="kanban Email">
+                <h2><i class="material-icons"></i> Inscreva Seu Email!</h2>
+                <li class="dd-item" data-id="Email">
+                    <div class="text" contenteditable="true">Coloque aqui seu email</div>
+                    <div class="actions">
+                        <button id="submit-email">Inscrever</button>
+                    </div>
+                </li>
+            </ol>
+    </div>
+    
+    <script src="script.js"></script> 
+</body>
+</html>
